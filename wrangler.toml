@@ -1,0 +1,12 @@
+name = "open-cooperation-experiment"
+main = "./workers/index.ts"
+compatibility_date = "2026-09-11"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "ROUND_DB"
+database_name = "open-cooperation-rounds"
+database_id = "e91aa971-63c8-4d5b-9f73-cc1eb67e9c5f"

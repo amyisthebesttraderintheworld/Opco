@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101a19" />
+    <title>Open Cooperation / live round</title>
+    <script type="module" crossorigin src="/assets/index-wI2jJhHl.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/nacl-fast-s062MUbA.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Qmz14R5u.css">
+  </head>
+  <body>
+    <div id="app">
+      <main style="color:#e8eee5;font-family:system-ui,sans-serif;padding:48px;max-width:720px">
+        <p style="color:#d7f66a;letter-spacing:.12em;font-size:12px">OPEN COOPERATION</p>
+        <h1 style="font-size:42px;margin:16px 0">Loading live round...</h1>
+        <p style="color:#94a49c">Connecting to the testnet dashboard.</p>
+      </main>
+    </div>
+      <script>
+        window.addEventListener('error', (event) => {
+          const target = document.querySelector('#app p:last-child');
+          if (target) target.textContent = `Dashboard startup error: ${event.message || 'Unknown error'}`;
+        });
+        window.addEventListener('unhandledrejection', (event) => {
+          const target = document.querySelector('#app p:last-child');
+          if (target) target.textContent = `Dashboard startup error: ${event.reason?.message || event.reason || 'Unknown error'}`;
+        });
+      </script>
+  </body>
+</html>

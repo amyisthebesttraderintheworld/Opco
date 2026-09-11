@@ -1,0 +1,47 @@
+{
+  "name": "ton-tolk-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TON smart contract development with Tolk and Blueprint",
+  "scripts": {
+    "build": "blueprint build --all",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "deploy:counter": "npx blueprint run deployCounter",
+    "deploy:round": "npx blueprint run deployOpenCooperationRound",
+    "deploy:testnet-jettons": "MINT_TESTNET_JETTONS=true node scripts/run-with-env.cjs npx blueprint run deployTestnetJettons --testnet --mnemonic",
+    "web": "vite --host 0.0.0.0",
+    "cf:build": "vite build",
+    "cf:deploy": "node scripts/cloudflare.cjs pages deploy dist",
+    "cf:deploy:worker": "node scripts/cloudflare.cjs deploy",
+    "cf:whoami": "node scripts/cloudflare.cjs whoami",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@ton-community/func-js": "^0.10.0",
+    "@ton/blueprint": "^0.45.0",
+    "@ton/core": "^0.63.1",
+    "@ton/crypto": "^3.3.0",
+    "@ton/sandbox": "^0.44.0",
+    "@ton/test-utils": "^0.12.0",
+    "@ton/tolk-js": "^1.4.2",
+    "@ton/ton": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.5.1",
+    "playwright": "^1.63.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2",
+    "vite": "^8.3.0",
+    "wrangler": "^4.23.0"
+  },
+  "dependencies": {
+    "@ton-community/assets-sdk": "^0.0.5",
+    "@tonconnect/ui": "^3.0.2"
+  }
+}
